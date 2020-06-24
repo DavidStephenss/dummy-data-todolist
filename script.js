@@ -14,8 +14,8 @@ let arrayOfTodos = [
     "completed": false
   }]
 
-  console.log(arrayOfTodos[0].userId) // => 14
- console.log(arrayOfTodos[1].userId) // => 20
+//   console.log(arrayOfTodos[0].userId) // => 14
+//  console.log(arrayOfTodos[1].userId) // => 20
 
   const fetchTodos = () => {
     fetch('https://jsonplaceholder.typicode.com/todos')
@@ -28,20 +28,40 @@ let arrayOfTodos = [
   }
 
   const populateTodos = () => {
-      let unicorn = document.getElementById("todo-list")
 
-      let poop = document.createElement("li")
+      let newElement = document.getElementById("todo-list")
+      let fontColor = ""
+    
+      for (let i = 0; i < arrayOfTodos.length; i++) {
 
-      let fork = document.createTextNode (arrayOfTodos[0].title)
 
-      poop.appendChild(fork)
+        if (arrayOfTodos[i].completed === true){
+          fontColor = "green"
+        } else {
+          fontColor = "red"
+        }
+        
+        let newLi = document.createElement('Li')
+        let newH1 = document.createElement('H1')
+        let newH2 = document.createElement('H2')
+        let newH3 = document.createElement('H3')
+        let newH4 = document.createElement('H4')
 
-      unicorn.appendChild(poop)
+
+        let userId = document.createTextNode(arrayOfTodos[i].userId)
+        newH1.appendChild(userId)
+        let id = document.createTextNode(arrayOfTodos[i].id)
+        newH2.appendChild(id)
+        let title = document.createTextNode(arrayOfTodos[i].title)
+        newH3.appendChild(title)
+        let completed = document.createTextNode(arrayOfTodos[i].completed)
+        newH4.appendChild(completed)
+
+        newElement.appendChild(newLi)
+        newLi.appendChild(newH1)
+        newLi.appendChild(newH2)
+        newLi.appendChild(newH3)
+        newLi.appendChild(newH4)
       
-    //   console.log(arrayOfTodos)
-
   }
-
-  let list = () => {
-    (document.getElementById(arrayOfTodos[0].title)) 
 }
