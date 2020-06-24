@@ -14,9 +14,7 @@ let arrayOfTodos = [
     "completed": false
   }]
 
-//   console.log(arrayOfTodos[0].userId) // => 14
-//  console.log(arrayOfTodos[1].userId) // => 20
-
+  let fontColor = ""
   const fetchTodos = () => {
     fetch('https://jsonplaceholder.typicode.com/todos')
     .then( (response) => response.json())
@@ -28,18 +26,9 @@ let arrayOfTodos = [
   }
 
   const populateTodos = () => {
-
       let newElement = document.getElementById("todo-list")
-      let fontColor = ""
     
-      for (let i = 0; i < arrayOfTodos.length; i++) {
-
-
-        if (arrayOfTodos[i].completed === true){
-          fontColor = "green"
-        } else {
-          fontColor = "red"
-        }
+      for (let i = 0; i < arrayOfTodos.length; i++){
         
         let newLi = document.createElement('Li')
         let newH1 = document.createElement('H1')
@@ -62,6 +51,12 @@ let arrayOfTodos = [
         newLi.appendChild(newH2)
         newLi.appendChild(newH3)
         newLi.appendChild(newH4)
-      
+
+        if (arrayOfTodos[i].completed === false) {
+          fontColor = 'green'
+        } else {
+          fontColor = 'red'
+        }
+      newH4.style.color=fontColor
   }
 }
