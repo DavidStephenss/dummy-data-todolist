@@ -14,6 +14,9 @@ let arrayOfTodos = [
     "completed": false
   }]
 
+  console.log(arrayOfTodos[0].userId) // => 14
+ console.log(arrayOfTodos[1].userId) // => 20
+
   const fetchTodos = () => {
     fetch('https://jsonplaceholder.typicode.com/todos')
     .then( (response) => response.json())
@@ -25,5 +28,20 @@ let arrayOfTodos = [
   }
 
   const populateTodos = () => {
+      let unicorn = document.getElementById("todo-list")
+
+      let poop = document.createElement("li")
+
+      let fork = document.createTextNode (arrayOfTodos[0].title)
+
+      poop.appendChild(fork)
+
+      unicorn.appendChild(poop)
+      
+    //   console.log(arrayOfTodos)
 
   }
+
+  let list = () => {
+    (document.getElementById(arrayOfTodos[0].title)) 
+}
