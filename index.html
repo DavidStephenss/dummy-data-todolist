@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
+
 <body>
-    <button onclick="fetchTodos()">Fetch Todos</button>
- <button onclick="logTodos()">Log Todos</button>
- <button onclick="populateTodos()">Populate Todos</button>
- <ol id="todo-list">
-   <!-- LIs will go here -->
- </ol>
+  <button onclick="fetchTodos()">Fetch Todos</button>
+  <button onclick="logTodos()">Log Todos</button>
+  <button onclick="populateTodos()">Populate Todos</button>
+  <label for="userID">UserID</label>
+  <input id="storeid" type="text" value="" onkeyup="userNum(this.value)">
+  <button type="button" onclick="showUserID()"> Show User ID</button>
+  <button type="button" onclick="showCompleted()"> Show Completed</button>
+  <button type="button" onclick="showUncompleted()"> Show Uncompleted</button>
+  <button type="button" onclick="clearList()">Clearlist</button>
+  <ol id="todo-list">
+    <!-- LIs will go here -->
+  </ol>
+  <script src="./script.js"></script>
 </body>
+
 </html>
 
 
-
- <script src="script.js"></script>
